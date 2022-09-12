@@ -20,10 +20,10 @@ class Sp02PrinterPlugin {
     return result;
   }
 
-  static Future<bool?> bindingPrinter() async {
-    final bool? result = await methodChannel.invokeMethod('bindPrinterService');
-    return result;
-  }
+  // static Future<bool?> bindingPrinter() async {
+  //   final bool? result = await methodChannel.invokeMethod('bindPrinterService');
+  //   return result;
+  // }
 
   static Future<bool?> unbindingPrinter() async {
     final bool? result =

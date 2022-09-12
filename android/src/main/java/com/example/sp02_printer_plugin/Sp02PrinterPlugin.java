@@ -21,6 +21,7 @@ public class Sp02PrinterPlugin implements FlutterPlugin, MethodCallHandler {
   public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
     channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "sp02_printer_plugin");
     sp02PrinterMethod = new Sp02PrinterMethod(flutterPluginBinding.getApplicationContext());
+    sp02PrinterMethod.bindPrinterService();
     channel.setMethodCallHandler(this);
   }
 
@@ -50,6 +51,7 @@ public class Sp02PrinterPlugin implements FlutterPlugin, MethodCallHandler {
 
   @Override
   public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    sp02PrinterMethod.unbindPrinterService();
     channel.setMethodCallHandler(null);
   }
 }

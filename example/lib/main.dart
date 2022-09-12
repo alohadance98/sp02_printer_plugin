@@ -25,14 +25,14 @@ class _MyAppState extends State<MyApp> {
     super.initState();
 
     // CẦN PHẢI BIND PRINTER TRONG INITSTATE MỚI CÓ THỂ IN
-    _bindingPrinter().then((value) => log('SP02 Printer Initialized'));
+    // _bindingPrinter().then((value) => log('SP02 Printer Initialized'));
     // _bindingPrinter();
   }
 
-  Future<bool?> _bindingPrinter() async {
-    final bool? result = await Sp02PrinterPlugin.bindingPrinter();
-    return result;
-  }
+  // Future<bool?> _bindingPrinter() async {
+  //   final bool? result = await Sp02PrinterPlugin.bindingPrinter();
+  //   return result;
+  // }
 
   void printImage() async {
     String resultValue;
